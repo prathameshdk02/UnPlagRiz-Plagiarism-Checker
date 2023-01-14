@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
+    "body-parser": "^1.20.1",
     "express": "^4.17.1",
     "request": "^2.88.2"
   }
