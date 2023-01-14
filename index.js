@@ -58,7 +58,8 @@ app.get('/scannow',(req,res)=>{
 });
 
 app.post('/webhook/completed/:id',(req,res)=>{
-    res.send(req.body);
+    console.log(req.body);
+    res.send();
 });
 
 app.get('/',(req,res,next)=>{
