@@ -1,32 +1,50 @@
-const express = require('express');
-const request = require('request');
-const bodyParser = require('body-parser');
-
+const express = require("express");
+const path = require("path");
 const app = express();
-const copyleaksContro = require('./controllers/copyleaks');
+
+const request = require("request");
+const bodyParser = require("body-parser");
+const hbs = require("hbs");
+
+const copyleaksContro = require("./controllers/copyleaks");
+
+const viewsPath = path.join(__dirname, "views");
+const staticPath = path.join(__dirname, "public");
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(staticPath));
 
-app.get('/gettoken',(req,res)=>{
-    copyleaksContro.fetchToken().then((token)=>{
-        res.send(token);
-    });
+app.set("view engine", "hbs");
+app.set("views", viewsPath);
+
+app.get("/gettoken", (req, res) => {
+  copyleaksContro.fetchToken().then((token) => {
+    res.send(token);
+});
 });
 
-app.get('/scannow',(req,res)=>{
-    // Fetch the token.
-    var id = Math.random() * (99999 - 10000) + 10000;
-    let toCheck = `This is also useful when the base64 encoding is non-standard; in my case the "/" character wasn't used, and the "?" character was used instead, meaning even in Chrome`;
-    let encodedString = Buffer.from(toCheck).toString('base64');
+app.post("/webhook/completed/:id", (req, res) => {
+    let resJson = req.body;
+    console.log('\n');
+    console.log(typeof resJson);
+    console.log(resJson);
+  res.send();
+});
 
+app.post("/scannow", (req, res) => {
+    var id = Math.random() * (99999 - 10000) + 10000;
+    let toCheck = req.body.toCheck;
+    let encodedString = Buffer.from(toCheck).toString("base64");
+    // Fetch the token.
+    console.log("Your String --> ",toCheck);
     copyleaksContro.fetchToken().then((token) => {
         console.log(token);
         const headers = {
             'Content-Type':'application/json',
             'Authorization':`Bearer ${token}`
         };
-
+        
         var dataString = `{
             "base64": "${encodedString}",
             "filename": "file.txt",
@@ -36,7 +54,7 @@ app.get('/scannow',(req,res)=>{
                 }
             }
         }`;
-
+        
         var options = {
             url: `https://api.copyleaks.com/v3/scans/submit/file/${id}`,
             method: 'PUT',
@@ -46,26 +64,19 @@ app.get('/scannow',(req,res)=>{
         
         request(options,(rErr,rRes,body)=>{
             if(rRes.statusCode==201){
-                res.send("Scan was Created!");
                 console.log("Scan created!");
             }else if(rRes.statusCode==400){
                 console.log("Bad request!");
             }else{
                 console.log("Some Error Occured!");
-                res.send(rRes);
             }
         });
     });
+  res.redirect("/");
 });
 
-
-app.post('/webhook/completed/:id',(req,res)=>{
-    console.log(req.body);
-    res.send();
-});
-
-app.get('/',(req,res,next)=>{
-    res.send("Yo Bakri");
+app.get("/", (req, res, next) => {
+  res.render("home", { pageTitle: "UnPlagRiz - Checker" });
 });
 
 app.listen(3000);
