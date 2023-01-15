@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const copyleaksContro = require('./controllers/copyleaks');
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.get('/gettoken',(req,res)=>{
@@ -57,9 +58,9 @@ app.get('/scannow',(req,res)=>{
     });
 });
 
+
 app.post('/webhook/completed/:id',(req,res)=>{
-    console.log(req);
-    console.log(res);
+    console.log(req.body);
     res.send();
 });
 
