@@ -70,8 +70,8 @@ app.post("/scannow", (req, res) => {
             }else{
                 console.log("Some Error Occured!");
             }
+            res.redirect("/");
         });
-        res.redirect("/");
     });
 });
 
