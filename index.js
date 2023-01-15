@@ -27,7 +27,7 @@ app.get("/gettoken", (req, res) => {
 app.post("/webhook/completed/:id", (req, res) => {
     let resJson = req.body;
     console.log('\n');
-    console.log(typeof resJson);
+    console.log(typeof(resJson));
     console.log(resJson);
   res.send();
 });
@@ -71,8 +71,8 @@ app.post("/scannow", (req, res) => {
                 console.log("Some Error Occured!");
             }
         });
+        res.redirect("/");
     });
-  res.redirect("/");
 });
 
 app.get("/", (req, res, next) => {
