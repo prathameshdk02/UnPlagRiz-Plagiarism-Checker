@@ -1,4 +1,6 @@
 // LOL
+const webDomain = 'https://1bec-182-48-235-239.in.ngrok.io';
+
 const frm = document.getElementById('frm');
 const toCheckArea = document.getElementById('toCheck');
 const submitBtn = document.getElementById('checkSubmit');
@@ -27,12 +29,11 @@ frm.addEventListener('submit',(e) => {
         body: JSON.stringify(data)
     };
 
-    fetch('https://1bec-182-48-235-239.in.ngrok.io/scannow',options).then(() => {
-        console.log("Completed Form request!");
+    fetch(`${webDomain}/scannow`,options).then(() => {
+        console.log("Request to the Backend was successful!");
     });
 
-    fetch(`https://1bec-182-48-235-239.in.ngrok.io/results/${frmId}`).then((data) => {
-        console.log("From JS FIle!");
+    fetch(`${webDomain}/results/${frmId}`).then((data) => {
         return data.json();
     }).then((data)=>{
         console.log(data);
