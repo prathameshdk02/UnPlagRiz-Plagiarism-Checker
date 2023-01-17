@@ -1,5 +1,6 @@
 const fs = require('fs');
 const request = require('request');
+const path = require('path');
 
 // Auth Configurations
 const webDomain = "https://copyleakstest.cyclic.app";
@@ -91,12 +92,14 @@ const scanNowHandler = (req,res) => {
     });
 }
 
+const dataDir = path.join(__dirname,'..','data');
+
 // To be executed on Completion Webhook...
 const webhookCompleteHandler = (req,res) => {
     console.log("Webhook was successfully completed!");
     const id = req.params.id;
     let resString = JSON.stringify(req.body);
-    fs.writeFile(`data/${id}.json`,resString,(err)=>{
+    fs.writeFile(`${dataDir}/${id}.json`,resString,(err)=>{
         if(err){
             console.log("Couldn't Write the Response File.");
             console.log(err);
