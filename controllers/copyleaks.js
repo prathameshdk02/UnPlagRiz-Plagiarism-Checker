@@ -99,6 +99,7 @@ const webhookCompleteHandler = (req,res) => {
     fs.writeFile(`data/${id}.json`,resString,(err)=>{
         if(err){
             console.log("Couldn't Write the Response File.");
+            console.log(err);
         }
     });
     res.send();
