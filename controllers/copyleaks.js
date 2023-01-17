@@ -2,9 +2,9 @@ const fs = require('fs');
 const request = require('request');
 
 // Auth Configurations
-const webDomain = "https://1bec-182-48-235-239.in.ngrok.io";
-const adminEmail = "prathameshdk02@gmail.com";
-const adminApiKey = "9888c037-8fb1-44df-a969-ac4561b2d872";
+const webDomain = "https://copyleakstest.cyclic.app";
+const adminEmail = "prathameshdk20comp@student.mes.ac.in";
+const adminApiKey = "5172eb96-4042-47a4-a2e6-561af5276848";
 
 // To be executed to fetch API token.
 const fetchToken = () => new Promise((resolve) => {
