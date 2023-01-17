@@ -92,7 +92,7 @@ const scanNowHandler = (req,res) => {
     });
 }
 
-const dataDir = path.join(__dirname,'..','data');
+// const dataDir = path.join(__dirname,'..','data');
 
 // To be executed on Completion Webhook...
 const webhookCompleteHandler = (req,res) => {
@@ -100,7 +100,7 @@ const webhookCompleteHandler = (req,res) => {
     const id = req.params.id;
     let resString = JSON.stringify(req.body);
     console.log(__dirname);
-    fs.writeFile(`${dataDir}/${id}.json`,resString,(err)=>{
+    fs.writeFile(`data/${id}.json`,resString,(err)=>{
         if(err){
             console.log("Couldn't Write the Response File.");
             console.log(err);
