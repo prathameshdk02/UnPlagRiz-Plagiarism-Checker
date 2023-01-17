@@ -1,5 +1,5 @@
 // LOL
-const webDomain = 'https://1bec-182-48-235-239.in.ngrok.io';
+const webDomain = 'https://copyleakstest.cyclic.app';
 
 const frm = document.getElementById('frm');
 const toCheckArea = document.getElementById('toCheck');
