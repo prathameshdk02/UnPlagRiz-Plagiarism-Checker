@@ -40,7 +40,7 @@ frm.addEventListener('submit',async (e) => {
         console.log("Request to the Backend was successful! Scan Created!");
     });
 
-    await delay(15000);
+    await delay(40000);
 
     console.log("Requested Results just now.");
     fetch(`${webDomain}/results/${frmId}`).then((data) => {
