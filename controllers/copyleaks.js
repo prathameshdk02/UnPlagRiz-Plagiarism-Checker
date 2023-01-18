@@ -3,9 +3,12 @@ const request = require('request');
 const path = require('path');
 
 // Auth Configurations
-const webDomain = "https://copyleakstest.cyclic.app";
+// const webDomain = "https://copyleakstest.cyclic.app";
+const webDomain = "https://5a5e-182-48-235-230.in.ngrok.io";
 const adminEmail = "prathameshdk20comp@student.mes.ac.in";
 const adminApiKey = "5172eb96-4042-47a4-a2e6-561af5276848";
+
+const responses = [];
 
 // To be executed to fetch API token.
 const fetchToken = () => new Promise((resolve) => {
@@ -92,23 +95,28 @@ const scanNowHandler = (req,res) => {
     });
 }
 
-// const dataDir = path.join(__dirname,'..','data');
 
 // To be executed on Completion Webhook...
 const webhookCompleteHandler = (req,res) => {
-    console.log("Webhook was successfully completed!");
-    const id = req.params.id;
-    let resString = JSON.stringify(req.body);
-    console.log(__dirname);
-    fs.writeFile(`data/${id}.json`,resString,(err)=>{
-        if(err){
-            console.log("Couldn't Write the Response File.");
-            console.log(err);
-        }
-    });
     res.send();
+    console.log("Webhook was successfully completed!");
+    // let resString = JSON.stringify(req.body);
+    console.log();
+
+    responses.push({
+        id: req.params.id,
+        ...(req.body)
+    });
+
+    // fs.writeFile(`data/${id}.json`,resString,(err)=>{
+    //     if(err){
+    //         console.log("Couldn't Write the Response File.");
+    //         console.log(err);
+    //     }
+    // });
 }
 
 exports.fetchToken = fetchToken;
 exports.scanNowHandler = scanNowHandler;
 exports.webhookCompleteHandler = webhookCompleteHandler;
+exports.responses = responses;
