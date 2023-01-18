@@ -10,7 +10,13 @@ const generateRandomId = () => {
     return (Math.floor(Math.random() * (9999999 - 1000000) + 1000000)).toString() + '-' + Math.floor((Math.random() * (9999999 - 1000000) + 1000000)).toString();
 }
 
-frm.addEventListener('submit',(e) => {
+const delay = ms => new Promise((resolve) =>{
+    setTimeout(() => {
+        resolve();
+    },ms);
+})
+
+frm.addEventListener('submit',async (e) => {
     e.preventDefault();
 
     // Get Form details...
@@ -31,9 +37,11 @@ frm.addEventListener('submit',(e) => {
     };
 
     fetch(`${webDomain}/scannow`,options).then(() => {
-        console.log("Request to the Backend was successful!");
+        console.log("Request to the Backend was successful! Scan Created!");
     });
 
+    await delay(6000);
+    
     fetch(`${webDomain}/results/${frmId}`).then((data) => {
         return data.json();
     }).then((data)=>{
