@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/results/:id',async (req,res) => {
     let id = req.params.id;
-    let timer = 10000;
+    let timer = 60000;
     console.log("Waiting for JSON response of",id);
     while(1){
         await util.delay(timer);
