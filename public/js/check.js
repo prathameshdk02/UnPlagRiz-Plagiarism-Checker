@@ -43,9 +43,9 @@ frm.addEventListener('submit',async (e) => {
     
     
     await delay(2000);
-    let resData;
+    let resData,gotResults;
     do{
-        let gotResults = false;
+        gotResults = false;
         console.log("Requested Results just now.");
         await fetch(`${webDomain}/results/${frmId}`).then(data => data.json()).then((data)=>{
             resData = data;
