@@ -8,27 +8,24 @@ const util = require('../controllers/utility');
 const router = express.Router();
 
 
-router.get('/results/:id',async (req,res) => {
+router.get('/results/:id',(req,res) => {
     let id = req.params.id;
-    let timer = 6000;
-    console.log("Waiting for JSON response of",id);
-    while(1){
-        await util.delay(timer);
-        console.log("Looking for Reponse...")
-        try{
-            // let data = fs.readFileSync(path.join(__dirname,'..','data',`${id}.json`),'utf-8');
-            let resp = copyleaksContro.responses.find(obj => obj.id === id);
-            if(resp != undefined){
-                console.log("Response Found! Sending...");
-                res.send(resp);
-                copyleaksContro.responses.pop();
-                break;
-            }else{
-                throw new Error("Not Found!");
+    console.log(`Looking for Reponse with id:${id}...`);
+    try{
+        let resp = copyleaksContro.responses.find(obj => obj.id === id);
+        if(resp != undefined){
+            console.log("Response Found! Sending...");
+            res.send(resp);
+            copyleaksContro.responses.pop();
+        }else{
+            let resObj = {
+                message: "Response hasn't arrived"
             }
-        }catch(err){
-            console.log("Response hasn't arrived yet.");   
+            res.send(resObj);
+            throw new Error();
         }
+    }catch(err){
+        console.log("Response hasn't arrived yet.");   
     }
     
 });
