@@ -40,13 +40,29 @@ frm.addEventListener('submit',async (e) => {
         console.log("Request to the Backend was successful! Scan Created!");
     });
 
-    await delay(40000);
+    
+    
+    await delay(2000);
+    let resData;
+    do{
+        let gotResults = false;
+        console.log("Requested Results just now.");
+        await fetch(`${webDomain}/results/${frmId}`).then(data => data.json()).then((data)=>{
+            resData = data;
+        });
 
-    console.log("Requested Results just now.");
-    fetch(`${webDomain}/results/${frmId}`).then((data) => {
-        return data.json();
-    }).then((data)=>{
-        console.log(data);
-    });
+        if(resData.message){
+            console.log("Error: ",resData);
+            continue;
+        }else{
+            console.log("Response Arrived: ",resData);
+            gotResults = true;
+        }
+    }while(!gotResults);
+
+    console.log("Finished Execution!");
+    // fetch(`${webDomain}/results/${frmId}`).then((data) => {
+    //     return data.json();
+    // }).then((data)=>{});
 });
 
