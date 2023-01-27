@@ -1,0 +1,55 @@
+.loader {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    animation: rotate 1.5s ease-in infinite alternate;
+}
+  .loader::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #a7a8fa;
+    background: currentColor;
+    width: 64px;
+    height: 32px;
+    border-radius: 0 0 50px 50px;
+  }
+  .loader::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    background: #FFF;
+    width: 8px;
+    height: 64px;
+    animation: rotate 1.2s linear infinite alternate-reverse;
+  }
+  
+  @keyframes rotate {
+    100% { transform: rotate(360deg)}
+  }
+        
+#preloader{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display:grid;
+  place-items: center;
+  position:absolute;
+  top:0;
+  left:0;
+  background:url(../assets/common/main-back.png);
+  background-size:200%;
+  color:white;
+}
+
+#preloader span{
+    position: relative;
+    top:40%;
+}
+
+#preloader h2{
+    position: relative;
+    top:-40%;
+}  

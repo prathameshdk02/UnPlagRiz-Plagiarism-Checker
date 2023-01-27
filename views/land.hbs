@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="../css/load.css">
+    <link rel="stylesheet" href="../css/land.css">
+</head>
+<body>
+    <div id="preloader">
+        <span class="loader"></span>
+        <h2 id="preloader-text"></h2>
+    </div>
+    <section class="hero-wrapper">
+        {{!-- For Navigation Bar --}}
+        <nav class="nav-container">
+            <div class="logo-container">
+                <span>UnPlagRiz</span>
+            </div>
+            <ul>
+                <li><a href="/check">Check</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">SignUp</a></li>
+                <li><a href="">link4</a></li>
+            </ul>
+            <div class="nav-login">
+                <a href="/login" class="link-empha">Login</a>
+            </div>
+        </nav>
+        
+         {{!-- For Hero Section  --}}
+        <section class="hero-container">
+            <div class="hero-text">
+                <div>
+                    <h1>This is a Heading</h1>
+                    <span>Some of SubText</span>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <section class="main-section">
+        <h2>This is Another Heading!</h2>
+        <h3 class="sub-heading">This is SubHeading!</h3>
+        <div class="features-panel">
+            <div class="feature-card">
+                <div>
+                    <img src="../assets/landing/glass.png" alt="glass"></i>
+                </div>
+                <h3>Search Effectively</h3>
+            </div>
+            <div class="feature-card">
+                <div>
+                    <img src="../assets/landing/doc.png" alt="document">
+                </div>
+                <h3>Supports Multiple FileTypes</h3>
+            </div>
+            <div class="feature-card">
+                <div>
+                    <img src="../assets/landing/fast.png" alt="fast">
+                </div>
+                <h3>Quick & Reliable</h3>
+            </div>
+            <div class="feature-card">
+                <div>
+                    <img src="../assets/landing/copyleaks.png" alt="copyleaks"></img>
+                </div>
+                <h3>Powered by Copyleaks</h3>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="../js/preloader.js"></script>
+</body>
+</html>

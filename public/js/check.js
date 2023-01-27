@@ -1,8 +1,8 @@
 // Javascript file for making requests to the backend!
 
 // DomainName to request...
-const webDomain = 'https://copyleakstest.cyclic.app';
-// const webDomain = 'https://5a5e-182-48-235-230.in.ngrok.io';
+// const webDomain = 'https://copyleakstest.cyclic.app';
+const webDomain = 'https://0cab-182-48-242-31.in.ngrok.io';
 
 const frm = document.getElementById('frm');
 const toCheckArea = document.getElementById('toCheck');

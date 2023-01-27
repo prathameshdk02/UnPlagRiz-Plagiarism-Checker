@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up!</title>
+    <link rel="stylesheet" href="../css/logSign.css">
+</head>
+<body>
+    <section class="flex-wrapper">
+        <form class="form-container" method="POST" action="/signup">
+            <h1>Sign Up</h1>
+            <div class="frm-text">
+                <input type="text" name="frm-user" value="" required>
+                <label for="frm-text">Username</label>
+                <span></span>
+            </div>
+            <div class="frm-text">
+                <input type="password" id="frm-pass" value="" required>
+                <label for="frm-pass">Password</label>
+                <span></span>
+            </div>
+            <div class="frm-text">
+                <input type="password" id="frm-conf-pass" value="" required>
+                <label for="frm-conf-pass">Confirm Password</label>
+                <span></span>
+            </div>
+            <div class="frm-submit">
+                <input type="submit">
+            </div>
+            <div class="signup">
+                <a href="/login">Already a Member? Login Here!</a>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

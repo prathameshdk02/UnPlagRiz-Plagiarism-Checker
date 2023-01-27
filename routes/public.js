@@ -1,12 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.render("home", { pageTitle: "UnPlagRiz - Home" });
-});
 
 router.get("/check",(req,res) => {
-    res.render("check",{pageTitle:'Check Plagiarism.'})
+    res.render("check",{pageTitle:'Check Plagiarism.'});
+});
+
+router.get("/login",(req,res)=>{
+    res.render("login",{pageTitle: 'Login - UnPlagRiz'});
+});
+
+router.get("/signup",(req,res)=>{
+    res.render("signup",{pageTitle: 'SignUp - UnPlagRiz'});
+});
+
+router.get("/", (req, res) => {
+    res.render("land", { pageTitle: "Home - UnPlagRiz" });
 });
 
 module.exports = router;

@@ -1,0 +1,151 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200:400&display=swap'); */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    height:100%;
+}
+
+body{
+    height:100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(../assets/common/main-back.png);
+    background-size:1580px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.flex-wrapper{
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    background-color: #fff;
+    height:max-content;
+    max-width:34rem;
+    width:28rem;
+    padding:1.8rem 2.2rem 1.5rem 2.2rem;
+    border-radius:8px;
+    box-shadow:1px 1px 200px 40px rgba(0, 0, 162, 0.79);
+}
+
+.form-container h1{
+    font-size:1.6rem;
+}
+
+.frm-text{
+    position:relative;
+    margin: 1.95rem 0rem 1.3rem 0rem;
+    cursor:pointer;
+}
+
+.frm-text input{
+    width: 100%;
+    height:2.3rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid grey;
+    padding-inline:4px;
+    font-size:0.9rem;
+}
+
+.frm-text label{
+    user-select: none;
+    position:absolute;
+    top:10%;
+    left:0px;
+    transition: .5s ease;
+}
+
+.frm-text span::before{
+    user-select: none;
+    position:absolute;
+    content:'';
+    top:34px;
+    left:0;
+    width:0%;
+    height:2px;
+    background-color: rgb(78, 78, 255);
+    transition:.1s ease-out;
+}
+
+.frm-text input:focus + label,
+.frm-text input:valid + label{
+    color:rgb(78, 78, 255);
+    top:-19px;
+}
+
+.frm-text input:focus,
+.frm-text input:valid{
+    border:none;
+}
+
+.frm-text input:focus ~ span::before,
+.frm-text input:valid ~ span::before
+{
+    width:100%;
+}
+
+
+
+.frm-submit{
+    text-align:center;
+}
+
+.frm-submit input[type="submit"]{
+    width:60%;
+    height:2.3rem;
+    border-radius:32px;
+    border:none;
+    color:white;
+    background-color: rgb(0 0 131 / 79%);
+    margin-bottom: 0.1rem;
+    margin-top:0.5rem;
+    font-weight: 600;
+    font-size: 0.8rem; 
+    cursor:pointer;
+    transition: .3s ease;
+}
+
+.frm-submit input[type="submit"]:hover{
+    transform: scale(1.05);
+}
+
+.forgot-pass{
+    position:relative;
+    height:1.5rem;
+    margin:0rem 0rem 0.5rem 0rem;
+}
+
+.forgot-pass a{
+    display:inline-block;
+    text-decoration: none;
+    color:rgb(0 0 131 / 79%);
+}
+
+.forgot-pass a:hover{
+    color:blue;
+}
+
+.signup{
+    text-align: center;
+    margin-top:0.8rem;
+}
+
+.signup a{
+    color:rgb(0 0 131 / 79%);;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.signup a:hover{
+    color:blue;
+    
+}
