@@ -9,30 +9,35 @@
 </head>
 <body>
     <section class="flex-wrapper">
-        <form class="form-container" method="POST" action="/signup">
+        <form class="form-container" method="POST" action="/signup" id="signup-form">
             <h1>Sign Up</h1>
             <div class="frm-text">
-                <input type="text" name="frm-user" value="" required>
-                <label for="frm-text">Username</label>
+                <input type="text" name="email" value="" id="email" required>
+                <label for="frm-text" class="text-label">Username</label>
+                <span></span>
+                <label class="frm-err" id="emailErr">Invalid Email Address!</label>
+            </div>
+            <div class="frm-text">
+                <input type="password" id="pass" required disabled>
+                <label for="frm-pass" class="text-label">Password</label>
+                <label class="frm-err" id="passErr">Should consist of atleast one Upper Case, one lower Case, one Symbol and have a length between 8 to 16 characters</label>
                 <span></span>
             </div>
             <div class="frm-text">
-                <input type="password" id="frm-pass" value="" required>
-                <label for="frm-pass">Password</label>
+                <input type="password" id="confPass" required disabled>
+                <label for="frm-conf-pass" class="text-label">Confirm Password</label>
                 <span></span>
-            </div>
-            <div class="frm-text">
-                <input type="password" id="frm-conf-pass" value="" required>
-                <label for="frm-conf-pass">Confirm Password</label>
-                <span></span>
+                <label class="frm-err" id="confPassErr">Passwords don't Match!</label>
             </div>
             <div class="frm-submit">
-                <input type="submit">
+                <input type="submit" id="frm-submit" disabled>
             </div>
             <div class="signup">
-                <a href="/login">Already a Member? Login Here!</a>
+                Already a Member? <a href="/login">Login Here!</a>
             </div>
         </form>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="../js/signup.js"></script>
 </body>
 </html>
