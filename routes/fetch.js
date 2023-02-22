@@ -7,7 +7,6 @@ const util = require('../controllers/utility');
 
 const router = express.Router();
 
-
 router.get('/results/:id',(req,res) => {
     let id = req.params.id;
     console.log(`Looking for Reponse with id:${id}...`);
@@ -27,7 +26,6 @@ router.get('/results/:id',(req,res) => {
     }catch(err){
         console.log("Response hasn't arrived yet.");   
     }
-    
 });
 
 module.exports = router;

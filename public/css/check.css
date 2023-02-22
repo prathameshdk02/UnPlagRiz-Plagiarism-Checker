@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+:root{
+    --primary-margin: 8rem;
+    --navbar-padding: 1rem;
+    --navbar-grad-bottom: 0.31rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* For Development */
+/* nav{
+    border: 1px solid blue;
+}
+
+section{
+    border: 1px solid blue;
+} */
+
+html{
+    height:100%;
+    /* To Prevent Scrolling! */
+}
+
+body{
+    height:100%;
+    position: relative;
+}
+
+/* Hide Scrollbar */
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* For Navigation Bar */
+
+.navbar-wrapper{
+    background: linear-gradient(90deg, #0061ff, #60efff);
+    padding-bottom: var(--navbar-grad-bottom);
+}
+
+.navbar{
+    display: flex;
+    background-color: white;
+    padding-inline: var(--primary-margin);
+}
+
+.navbar .navbar-logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bolder;
+    color:#60657b;
+}
+
+.navbar ul{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.navbar ul li a{
+    display:inline-block;
+    text-decoration: none;
+    padding-block: var(--navbar-padding);
+    padding-inline: 1.5rem;
+    transition: all 0.2s ease;
+    color:#60657b;
+}
+
+.navbar ul li a:hover{
+    transform: scale(1.2);
+}
+
+/* For Section Wrapper */
+
+.section-wrapper{
+    margin-inline: var(--primary-margin);
+}
+
+#section-wrap-1{
+    height: 100vh;
+}
+
+
+/* For Checker Section */
+
+.checker-header{
+    font-family: 'Poppins', sans-serif;
+    /* margin-inline: var(--primary-margin); */
+    margin-top:4rem;
+    padding: 0.5rem;
+}
+
+.checker-header h1{
+    color:#1a58be;
+    font-size: 2rem;
+}
+
+.checker-header p{
+    color:#60657b;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.checker-header h1, .checker-header p{
+    text-align: center;
+}
+
+/* For Checker Section */
+
+.checker-section{
+    /* margin-inline: var(--primary-margin); */
+    padding-block: 4rem;
+}
+
+.checker-section textarea{
+    display: block;
+    font-size: 1.1rem;
+    margin: auto;
+    width: 75%;
+    height: 45vh;
+    outline:none;
+    resize: none;
+    border: 1px solid rgb(188, 188, 188);
+    padding: 0.5rem 0.7rem;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.checker-section .btn-container{
+    margin-inline:auto;
+    width: 75%;
+}
+
+.checker-section .btn-container button{
+    padding:0.7rem;
+    border: none;
+    margin-top:0.3rem;
+    border-radius: 6px;
+    background-color:#0051d3;
+    color: white;
+    max-width: 9rem;
+    width:20%;
+    transition: background-color 0.5s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.checker-section .btn-container button:hover{
+    background-color: #134597;
+    cursor: pointer;
+}
+
+.checker-section .btn-container button[disabled]{
+    cursor: default;
+    background-color: #6e7385;
+}
+
+.checker-section .btn-container button i{
+    display: inline-block;
+    padding-right:0.4rem;
+}
+
+/* For Checker Results Section */
+
+#section-wrap-results{
+    padding-block: 1rem;
+}
+
+.checker-results{
+    display:none;
+    /* display:block; */
+}
+
+.checker-results h2{
+    color:#1a58be;
+    font-size: 2rem;
+}
+
+.checker-results p{
+    font-size:1.2rem;
+    line-height: 3rem;
+    color:#60657b;
+}
+
+.attribute-wrapper{
+    /* margin-inline: auto; */
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    gap:1rem;
+    margin-block: 0.7rem;
+}
+
+#result-splash{
+    display:none;
+}
+
+.checker-results .result-attribute{
+    position: relative;
+    display: inline-block;
+    width:100%;
+    padding: 1rem 1rem 1rem 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color:#60657b;
+    font-weight: 500;
+    border:1px solid #6e738579;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.095) 0px 7px 29px 0px;
+}
+
+/* .checker-results .result-attribute::before{
+    content: '';
+    position: absolute;
+    inset: 50% auto auto 1rem;
+    width:6%;
+    height:2px;
+    background-color: #0061ff;    
+} */
+
+/* .checker-results .result-url-container{
+    border:1px solid blue;
+} */
+
+.checker-results .result-url-container .result{
+    display:none;
+    /* display:block; */
+    position: relative;
+    left:100%;
+    opacity:0;
+    width:70%;
+    border:1px solid #6e738579;
+    border-radius: 8px;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    margin-block: 0.8rem;
+    box-shadow: rgba(100, 100, 111, 0.095) 0px 7px 29px 0px;
+}
+
+.result-url-container .result{
+    position: relative;
+    color:#60657b;
+    font-size: 1.05rem;
+}
+
+.result-url-container .result h3{
+    color:#1a58be;
+    font-size: 1.25rem;
+}
+
+.result .result-item{
+    display:block;
+    font-weight: 400;
+}
+
+.result .result-item .result-item-url{
+    color:#0061ff;
+}
+
+.visit-label{
+    background-color: #0051d3d9;
+    position: absolute;
+    inset: auto 0 11% auto;
+    clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%,15% 50%, 0% 0%);
+    transition: all 0.3s ease;
+    transform: scale(1.07);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.visit-label:hover{
+    background-color: #0041a9d9;
+}
+
+.visit-label a{
+    color:white;
+    display: inline-block;
+    text-decoration: none;
+    padding-block:0.5rem;
+    padding-inline: 2.6rem;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+/* For Footer Section */
+
+.footer-wrapper{
+    background: linear-gradient(90deg, #0061ff, #60efff);
+    padding-top: var(--navbar-grad-bottom);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.page-footer{
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    background-color: white;
+    display:flex;
+    padding-inline: calc(var(--primary-margin) + 3rem);
+    padding-block: 2rem;
+    justify-content: space-between;
+}
+
+.footer-section h2{
+    position: relative;
+    color:#0051d3;
+    line-height: 2.3rem;
+}
+
+.footer-section h2::after{
+    content:'';
+    position: absolute;
+    bottom:-1px;
+    left:0;
+    width:70%;
+    background-color:#60adff;
+    height:3px;
+}
+
+.footer-section ul{
+    list-style: none;
+    padding-block:0.5rem;
+}
+
+.footer-section li{
+    line-height: 1.5rem;
+}
+
+.footer-section li a{
+    text-decoration: none;
+    color:#60657b;
+    transition: all 0.1s ease;
+    display: inline-block;
+}
+
+.footer-section li a:hover{
+    transform: scale(1.1);
+}
+
+/* For OnLoad Wrapper */
+
+.loading-screen{
+    position: absolute;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    backdrop-filter: blur(6px);
+}
+
+.load-splash{
+    color:#60657b;
+    position: relative;
+    right:0.3rem;
+    display:inline-block;
+    padding: 2rem;
+    font-size:1.4rem;
+    font-weight: bold;
+}
+
+
+/* For OnLoad Spinner */
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 40px;
+    height: 40px;    
+  }
+
+  .lds-dual-ring:after {
+    position: relative;
+    bottom: 0.6rem;
+    left:0.6rem;
+    content: " ";
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #0061ff;
+    border-color: #0061ff transparent #0061ff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

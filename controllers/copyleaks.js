@@ -3,8 +3,8 @@ const request = require('request');
 const path = require('path');
 
 // Auth Configurations
-// const webDomain = "https://copyleakstest.cyclic.app";
-const webDomain = "https://f640-182-48-235-254.in.ngrok.io";
+const webDomain = "https://copyleakstest.cyclic.app";
+// const webDomain = "https://854a-114-79-188-176.in.ngrok.io";
 const adminEmail = "prathamesh2002coc@gmail.com";
 const adminApiKey = "daca9d90-d333-42d3-aebe-613762d5f31c";
 
@@ -107,13 +107,6 @@ const webhookCompleteHandler = (req,res) => {
         id: req.params.id,
         ...(req.body)
     });
-
-    // fs.writeFile(`data/${id}.json`,resString,(err)=>{
-    //     if(err){
-    //         console.log("Couldn't Write the Response File.");
-    //         console.log(err);
-    //     }
-    // });
 }
 
 exports.fetchToken = fetchToken;

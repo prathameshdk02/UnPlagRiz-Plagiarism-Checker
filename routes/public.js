@@ -15,7 +15,7 @@ router.get("/login",(req,res)=>{
 });
 
 router.get("/", (req, res) => {
-    res.render("land", { pageTitle: "Home - UnPlagRiz" });
+    res.render("check", { pageTitle: "Check Plagiarism - UnPlagRiz" });
 });
 
 module.exports = router;
