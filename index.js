@@ -40,7 +40,7 @@ app.use(authRoutes);
 app.use(publicRoutes);
 app.use(route404);
 
-mongo.mongo(() => {
-    app.listen(3000);
-});
+// mongo.mongo(() => {
+// });
 
+app.listen(3000);
