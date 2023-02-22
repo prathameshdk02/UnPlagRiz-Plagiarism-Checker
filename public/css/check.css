@@ -47,6 +47,7 @@ body{
 }
 
 .navbar{
+    user-select: none;
     display: flex;
     background-color: white;
     padding-inline: var(--primary-margin);
@@ -99,6 +100,7 @@ body{
     /* margin-inline: var(--primary-margin); */
     margin-top:4rem;
     padding: 0.5rem;
+    user-select: none;
 }
 
 .checker-header h1{
@@ -143,6 +145,7 @@ body{
 }
 
 .checker-section .btn-container button{
+    user-select: none;
     padding:0.8rem;
     border: none;
     margin-top:0.3rem;
@@ -295,6 +298,7 @@ body{
     justify-content: space-around;
     max-width: 1180px;
     margin-inline:auto;
+    user-select: none;
 }
 
 .page-footer{
