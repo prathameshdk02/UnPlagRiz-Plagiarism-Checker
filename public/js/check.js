@@ -133,7 +133,7 @@ $('#scan_btn').click(async () => {
         
         $('html, body').animate({
             scrollTop: resultCoords.top
-        },2000);
+        },1300);
         
         internetResults.forEach((current) => {
             const url = current.url;
