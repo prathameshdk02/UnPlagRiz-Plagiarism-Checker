@@ -286,7 +286,6 @@ body{
 
 
 /* For Footer Section */
-
 .footer-wrapper{
     background: linear-gradient(90deg, #0061ff, #60efff);
     padding-top: var(--navbar-grad-bottom);
