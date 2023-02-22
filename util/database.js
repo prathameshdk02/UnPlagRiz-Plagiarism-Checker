@@ -5,7 +5,7 @@ let _db;
 
 const mongo = callback => {
     MongoClient.connect(
-        `mongodb+srv://patty:72889@cluster0.vewokzp.mongodb.net/?retryWrites=true&w=majority`
+        ``
     ).then(client => {
         console.log("Connected to MongoDB.");
         _db = client.db('UnPlagRizDB');
