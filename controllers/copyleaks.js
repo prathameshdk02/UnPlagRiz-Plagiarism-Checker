@@ -5,8 +5,8 @@ const path = require('path');
 // Auth Configurations
 const webDomain = "https://copyleakstest.cyclic.app";
 // const webDomain = "https://854a-114-79-188-176.in.ngrok.io";
-const adminEmail = "prathamesh2002coc@gmail.com";
-const adminApiKey = "daca9d90-d333-42d3-aebe-613762d5f31c";
+const adminEmail = "freestoragex15@gmail.com";
+const adminApiKey = "d925c184-bdca-4cad-87a8-6ff3690a2411";
 
 const responses = [];
 
