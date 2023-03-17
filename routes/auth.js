@@ -7,6 +7,10 @@ const router = express.Router();
 
 router.post("/login",(req,res) => {
     let user = new User(req.body.email,req.body.pass);
+    
+    // Setting a cookie for Fun!
+    res.setHeader('Set-Cookie','loggedIn=true');
+
     user.login().then((results) => {
         if(results){
             return res.redirect('/check')
