@@ -1,5 +1,3 @@
-const webDomain = 'https://f640-182-48-235-254.in.ngrok.io';
-
 
 const addrFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
 
@@ -121,33 +119,16 @@ const validateEmailAddress = () => {
 
 /* On Submitting the Form */
 $('#signup-form').submit(async (e)=>{
-    e.preventDefault();
     let submitBtn = $('#frm-submit');
     submitBtn.attr('disabled','disabled')
     .val("Submitted!")
     .fadeTo(1000,0.8);
         
-    const reqBody = {
-        email: emailField.val(),
-        pass: confPassField.val()
-    }
+    await delay(10000);
 
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type':'application/json'
-        },
-        body: JSON.stringify(reqBody)
-    };
-
-    await fetch(`${webDomain}/signup`,options).then(() => {
-        submitBtn.removeAttr('disabled')
-        .val("Submit")
-        .fadeTo(500,1);
-    }).catch((err) => {
-        console.log(err);
-    });
-
+    submitBtn.removeAttr('disabled')
+    .val("Submit")
+    .fadeTo(500,1);
 });
 
 emailField.on({

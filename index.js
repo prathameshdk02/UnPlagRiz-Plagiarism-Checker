@@ -3,11 +3,10 @@ const path = require("path");
 
 const app = express();
 
+const {mongoConnect} = require('./util/database');
+
 const bodyParser = require("body-parser");
 const hbs = require("hbs");
-const mongo = require('./util/database');
-
-const copyleaksContro = require("./controllers/copyleaks");
 
 const webhookRoutes = require('./routes/webhook');
 const fetchRoutes = require('./routes/fetch');
@@ -29,8 +28,8 @@ app.set("views", viewsPath);
 /* Code starts Here */
 
 // Middlewares to parse incoming request bodies.
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Handling Routes
 app.use(webhookRoutes);
@@ -40,7 +39,8 @@ app.use(authRoutes);
 app.use(publicRoutes);
 app.use(route404);
 
-// mongo.mongo(() => {
-// });
 
-app.listen(3000);
+mongoConnect(() => {
+    app.listen(3000);
+    console.log("Listening on the port!");
+});

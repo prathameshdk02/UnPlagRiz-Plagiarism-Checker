@@ -1,22 +1,24 @@
 const express = require('express');
+
+const User = require('../models/User');
 const getDb = require('../util/database').getDb;
 
 const router = express.Router();
 
-router.post("/signup",async (req,res)=>{
-    res.send();
-    let email = req.body.email;
-    let pass = req.body.pass;
-    console.log(email,pass);
-    db = getDb();
-    await db.collection('Users').insertOne({
-        email: email,
-        password: pass
-    }).then((res)=>{
-        console.log(res);
-        console.log("Submit successfull");
-    }).catch((err) => {
-        console.log(err);
+router.post("/login",(req,res) => {
+    let user = new User(req.body.email,req.body.pass);
+    user.login().then((results) => {
+        if(results){
+            return res.redirect('/check')
+        }
+        return res.render('login',{email: `${req.body.email}`,authErr:true});
+    });
+})
+
+router.post("/signup",(req,res)=>{
+    let newUser = new User(req.body.email,req.body.pass);
+    newUser.signUp().then(() => {
+        res.redirect(`/login?email=${req.body.email}`);
     });
 });
 

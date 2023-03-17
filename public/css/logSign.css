@@ -21,27 +21,52 @@ html{
 body{
     height:100%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url(../assets/common/main-back.png);
-    background-size:1580px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background: url(../assets/common/main-back.png); */
+}
+
+/* Overriden for Navbar */
+
+.navbar-wrapper{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+.adj-back{
+    width:12%;
+    height: 52%;
+    max-width: 15rem;
+    background: linear-gradient(315deg, hsla(186, 100%, 69%, 1) 0%, #0062ff 81%);
+    border-radius:32px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .flex-wrapper{
-    height: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
+    position:relative;
+    height: 100%;
+    width:100%;
 }
 
 .form-container{
+    width: 45%;
+    height: 52%;
     background-color: #fff;
-    height:max-content;
-    max-width:34rem;
-    width:28rem;
+    border-top:1px solid grey;
+    border-bottom:1px solid grey;
+    border-right:1px solid grey;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius:0;
+    border-top-left-radius:0;
+    max-width:27rem;
     padding:1.8rem 2.2rem 1.5rem 2.2rem;
-    border-radius:8px;
-    box-shadow:1px 1px 200px 40px rgba(0, 0, 162, 0.79);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .form-container h1{
@@ -86,13 +111,13 @@ body{
     left:0;
     width:0%;
     height:2px;
-    background-color: rgb(78, 78, 255);
+    background-color: #0058e6;
     transition:.1s ease-out;
 }
 
 .frm-text input:focus + label,
 .frm-text input:valid + label{
-    color:rgb(78, 78, 255);
+    color:#0058e6;
     top:-19px;
 }
 
@@ -118,14 +143,13 @@ body{
     border-radius:32px;
     border:none;
     color:white;
-    background-color: rgb(0 0 131 / 79%);
+    background-color: #0058e6;
     margin-bottom: 0.1rem;
     margin-top:0.5rem;
     font-weight: 600;
     font-size: 0.8rem; 
     cursor:pointer;
     transition: .3s ease;
-    clear:both;
 }
 
 .frm-submit input[type="submit"]:not([disabled]):hover{
@@ -155,7 +179,7 @@ body{
 
 .signup{
     text-align: center;
-    margin-top:0.8rem;
+    margin-top:0.5rem;
 }
 
 .signup a{
@@ -177,4 +201,12 @@ body{
     background-color: white;
     z-index:10;
     padding:3px;
+}
+
+/* For Authentication Errors */
+
+.auth-err{
+    text-align:center;
+    color:red;
+    margin-top:0.5rem;
 }

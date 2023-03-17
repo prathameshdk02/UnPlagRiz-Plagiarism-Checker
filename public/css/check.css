@@ -42,6 +42,7 @@ body{
 /* For Navigation Bar */
 
 .navbar-wrapper{
+    z-index:4;
     background: linear-gradient(90deg, #0061ff, #60efff);
     padding-bottom: var(--navbar-grad-bottom);
 }

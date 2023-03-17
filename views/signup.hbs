@@ -5,11 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up!</title>
+    <link rel="stylesheet" href="../css/check.css">
     <link rel="stylesheet" href="../css/logSign.css">
 </head>
 <body>
+    <div class="navbar-wrapper">
+      <nav class="navbar">
+        <div class="navbar-logo"><span>UNPLAGRIZ</span></div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        </ul>
+      </nav>
+    </div>
+
     <section class="flex-wrapper">
-        <form class="form-container" method="POST" action="/signup" id="signup-form">
+        <div class="adj-back"></div>
+        <form class="form-container" action="/signup" method="POST" id="signup-form">
             <h1>Sign Up</h1>
             <div class="frm-text">
                 <input type="text" name="email" value="" id="email" required>
@@ -18,13 +32,13 @@
                 <label class="frm-err" id="emailErr">Invalid Email Address!</label>
             </div>
             <div class="frm-text">
-                <input type="password" id="pass" required disabled>
+                <input type="password" name="pass" id="pass" required disabled>
                 <label for="frm-pass" class="text-label">Password</label>
                 <label class="frm-err" id="passErr">Should consist of atleast one Upper Case, one lower Case, one Symbol and have a length between 8 to 16 characters</label>
                 <span></span>
             </div>
             <div class="frm-text">
-                <input type="password" id="confPass" required disabled>
+                <input type="password" name="confPass" id="confPass" required disabled>
                 <label for="frm-conf-pass" class="text-label">Confirm Password</label>
                 <span></span>
                 <label class="frm-err" id="confPassErr">Passwords don't Match!</label>
