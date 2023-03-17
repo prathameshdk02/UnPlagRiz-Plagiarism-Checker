@@ -22,7 +22,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  res.render("check", { pageTitle: "Check Plagiarism - UnPlagRiz" });
+  res.render("signup", { pageTitle: "SignUp with UnPlagRiz..." });
 });
 
 module.exports = router;
