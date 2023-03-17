@@ -1,7 +1,7 @@
 
 /* Domains */
-// const webDomain = 'https://copyleakstest.cyclic.app';
-const webDomain = 'https://854a-114-79-188-176.in.ngrok.io';
+const webDomain = 'https://copyleakstest.cyclic.app';
+// const webDomain = 'https://854a-114-79-188-176.in.ngrok.io';
 
 /* Generates Random IDs */
 const generateRandomId = () => {

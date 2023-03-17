@@ -1,4 +1,3 @@
-
 const addrFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
 
 const pwdLength = /^.{8,16}$/;
