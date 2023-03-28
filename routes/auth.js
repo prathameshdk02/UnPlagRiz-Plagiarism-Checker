@@ -9,10 +9,12 @@ router.post("/login",(req,res) => {
     let user = new User(req.body.email,req.body.pass);
     
     // Setting a cookie for Fun!
-    res.setHeader('Set-Cookie','loggedIn=true');
-
+    // res.setHeader('Set-Cookie','loggedIn=true');
+    
     user.login().then((results) => {
         if(results){
+            // For handling Sessions...
+            req.session.loggedIn = true;
             return res.redirect('/check')
         }
         return res.render('login',{email: `${req.body.email}`,authErr:true});

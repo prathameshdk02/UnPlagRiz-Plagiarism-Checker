@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/check", (req, res) => {
-  res.render("check", { pageTitle: "Check Plagiarism." });
+  if (req.session.loggedIn == true) {
+    return res.render("check", { pageTitle: "Check Plagiarism." });
+  }
+  res.redirect('/login');
 });
 
 router.get("/signup", (req, res) => {
