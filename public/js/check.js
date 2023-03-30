@@ -32,6 +32,8 @@ const clearResults = async () => {
 const loadingScreen = $('.loading-screen');
 const preloaderSplash = $('.load-splash');
 
+let heroCoords = $('#section-wrap-1').offset();
+
 /* Adding Click Listener to Scan Now Button */ 
 $('#scan_btn').click(async () => {
     $(this).attr("disabled","disabled");

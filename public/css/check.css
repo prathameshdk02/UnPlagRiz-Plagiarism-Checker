@@ -25,6 +25,8 @@ section{
 
 html{
     height:100%;
+    scroll-snap-type: y mandatory;
+
     /* To Prevent Scrolling! */
 }
 
@@ -42,6 +44,10 @@ body{
 
 /* For Navigation Bar */
 .navbar-wrapper{
+    position: sticky;
+    width:100%;
+    top:0;
+    left:0;
     z-index:4;
     background: linear-gradient(90deg, #0061ff, #60efff);
     padding-bottom: var(--navbar-grad-bottom);
@@ -91,12 +97,13 @@ body{
 }
 
 #section-wrap-1{
+    scroll-snap-align: start;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: calc(100vh - 61px);
+    height:100vh;
 }
 
 #wave-svg{
@@ -109,14 +116,13 @@ body{
 
 
 /* For Checker Section */
-
 .checker-header{
     font-family: 'Poppins', sans-serif;
     padding: 0.5rem;
     user-select: none;
     min-width: 15rem;
     /* For centering properly */
-    padding-bottom:9rem;
+    /* padding-bottom:4rem; */
 }
 
 .checker-header h1{
@@ -166,7 +172,24 @@ body{
 
 .checker-section{
     /* margin-inline: var(--primary-margin); */
+    scroll-snap-align: start;
     padding-block: 4rem;
+    height: 100vh;
+}
+
+.checker-section h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    color:#1a58be;
+}
+
+.checker-section h2 + span{
+    display:block;
+    text-align:center;
+    color: #6e7385;
+    font-size: 1.2rem;
+    margin-bottom:2.5rem;
 }
 
 .checker-section textarea{
@@ -334,6 +357,7 @@ body{
     background: linear-gradient(90deg, #0061ff, #60efff);
     padding-top: var(--navbar-grad-bottom);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    scroll-snap-align: end;
 }
 
 .footer-section-wrapper{
@@ -392,17 +416,18 @@ body{
 
 /* For OnLoad Wrapper */
 .loading-screen{
+    z-index: 100;
     position: absolute;
     width:100vw;
-    height:100vh;
-    top:0;
+    height:110vh;
+    top:100%;
     left:0;
     background-color: rgba(255, 255, 255, 0.2);
     display: none;
     justify-content: center;
     align-items: center;
     gap:1rem;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(7px);
 }
 
 .load-splash{

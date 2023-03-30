@@ -29,7 +29,8 @@
       </nav>
     </div>
 
-    <div class="section-wrapper" id="section-wrap-1">
+
+    <section class="section-wrapper" id="section-wrap-1">
       <header class="checker-header">
         <h1>UnPlagRiz Plagiarism Checker</h1>
         <p>
@@ -37,15 +38,30 @@
         </p>
         <p>Scroll Down & Check Now!</p>
         <div class="check-now">
-          <a href="">Check Now!</a>
+          <a href="#check_area">Check Now!</a>
         </div>
       </header>
       <object data="../assets/common/waves.svg" id="wave-svg"></object>
-    </div>
+    </section>
 
+    {{!-- <h2>Enter or Copy paste some text here!</h2> --}}
+    <section class="checker-section">
+      <h2>Enter in some text here!</h2>
+        <span>Detect Plagiarism in texts & documents</span>
+        <textarea
+          name="check_area"
+          id="check_area"
+          placeholder="Enter some text here!"
+        ></textarea>
+        <div class="btn-container">
+          <button name="scan_btn" id="scan_btn">Scan for Plagiarism</button>
+          <button disabled>
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>Upload a File
+          </button>
+        </div>
+      </section>
     
-
-    <div class="section-wrapper" id="section-wrap-results">
+    <section class="section-wrapper" id="section-wrap-results">
         <section class="checker-results">
             <h2 id="result-heading">Results</h2>
             <p id="result-splash"></p>
@@ -58,7 +74,7 @@
 
             <div class="result-url-container" id="results-container"></div>
         </section>
-    </div>
+    </section>
 
     <!-- Footer Section Here -->
     <div class="footer-wrapper" id="footer">
