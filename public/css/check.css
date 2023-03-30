@@ -4,6 +4,7 @@
     --primary-margin: 8rem;
     --navbar-padding: 1rem;
     --navbar-grad-bottom: 0.31rem;
+    --navbar-font-size: 1.1rem;
 }
 
 *{
@@ -40,11 +41,11 @@ body{
 
 
 /* For Navigation Bar */
-
 .navbar-wrapper{
     z-index:4;
     background: linear-gradient(90deg, #0061ff, #60efff);
     padding-bottom: var(--navbar-grad-bottom);
+    font-size: var(--navbar-font-size);
 }
 
 .navbar{
@@ -90,7 +91,20 @@ body{
 }
 
 #section-wrap-1{
-    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: calc(100vh - 61px);
+}
+
+#wave-svg{
+    position:absolute;
+    z-index:-1;
+    bottom:0;
+    left:calc(var(--primary-margin) * -1);
+    width:100vw;
 }
 
 
@@ -98,15 +112,16 @@ body{
 
 .checker-header{
     font-family: 'Poppins', sans-serif;
-    /* margin-inline: var(--primary-margin); */
-    margin-top:4rem;
     padding: 0.5rem;
     user-select: none;
+    min-width: 15rem;
+    /* For centering properly */
+    padding-bottom:9rem;
 }
 
 .checker-header h1{
     color:#1a58be;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .checker-header p{
@@ -117,6 +132,34 @@ body{
 
 .checker-header h1, .checker-header p{
     text-align: center;
+}
+
+.check-now{
+    margin-inline:auto;
+    width:30%;
+    text-align: center;
+    margin-block:1.5rem;
+}
+
+.check-now a{
+    border-radius: 16px;
+    border: 4px solid #4e8df3;
+    background: #4e8df3;
+    text-decoration: none;
+    display:inline-block;
+    height:4rem;
+    line-height: 3.68rem;
+    font-size:1.1rem;
+    width:100%;
+    color:white;
+    min-width: 8rem;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.check-now a:hover{
+    background-color: white;
+    color:#6e7385;
 }
 
 /* For Checker Section */
@@ -345,8 +388,9 @@ body{
     transform: scale(1.1);
 }
 
-/* For OnLoad Wrapper */
 
+
+/* For OnLoad Wrapper */
 .loading-screen{
     position: absolute;
     width:100vw;
