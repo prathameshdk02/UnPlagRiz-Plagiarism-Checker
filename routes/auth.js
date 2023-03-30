@@ -17,6 +17,7 @@ router.post("/login",(req,res) => {
             req.session.loggedIn = true;
             return res.redirect('/check')
         }
+        console.log("Incorect");
         return res.render('login',{email: `${req.body.email}`,authErr:true});
     });
 })
