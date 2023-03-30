@@ -1,13 +1,11 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200:400&display=swap'); */
-
-:root{
-    --input-field-height: 2.3rem;
-}
-
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+}
+
+:root{
+    --input-field-height: 2.3rem;
 }
 
 :webkit::-webkit-scrollbar{
@@ -19,16 +17,12 @@ html{
 }
 
 body{
+    position:relative;
     height:100%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background: url(../assets/common/main-back.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position:center; */
 }
 
 /* Overriden for Navbar */
-
 .navbar-wrapper{
     position:fixed;
     top:0;
@@ -36,44 +30,46 @@ body{
     width:100%;
 }
 
-.adj-back{
-    width:12%;
-    height: 52%;
-    max-width: 15rem;
-    background: linear-gradient(315deg, hsla(186, 100%, 69%, 1) 0%, #0062ff 81%);
-    border-radius:32px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.flex-wrapper{
+/* Code For Main-Section - SignUp / Login */
+.main-section{
+    background: url(../assets/common/main-back.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    position: relative;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position:relative;
     height: 100%;
-    width:100%;
 }
 
+
 .form-container{
-    width: 45%;
-    height: 52%;
     background-color: #fff;
     border-top:1px solid grey;
-    border-bottom:1px solid grey;
-    border-right:1px solid grey;
-    border-top-right-radius: 32px;
-    border-bottom-right-radius: 32px;
-    border-bottom-left-radius:0;
-    border-top-left-radius:0;
-    max-width:27rem;
+    margin:auto;
+    min-width: 21rem;
+    width: 30%;
+    max-width:34rem;
     padding:1.8rem 2.2rem 1.5rem 2.2rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 60%;
+}
+
+.sign-logo{
+    color: #60657b;
 }
 
 .form-container h1{
+    text-align: center;
     font-size:1.6rem;
+}
+
+.form-container h1 + span{
+    text-align: center;
+    display:block;
+    padding:0.5rem;
 }
 
 .frm-text{
@@ -185,13 +181,13 @@ body{
     margin-top:0.5rem;
 }
 
-.signup a{
+.login-link{
     color:rgb(0 0 131 / 79%);;
     text-decoration:none;
     display:inline-block;
 }
 
-.signup a:hover{
+.login-link:hover{
     color:blue;
 }
 

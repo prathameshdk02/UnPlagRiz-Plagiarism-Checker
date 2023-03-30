@@ -1,0 +1,218 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --input-field-height: 2.3rem;
+}
+
+:webkit::-webkit-scrollbar{
+    display:none;
+}
+
+html{
+    height:100%;
+}
+
+body{
+    position:relative;
+    height:100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Overriden for Navbar */
+.navbar-wrapper{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+/* Code For Main-Section - SignUp / Login */
+.main-section{
+    background: url(../assets/common/main-back.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.form-container{
+    background-color: #fff;
+    border-top:1px solid grey;
+    margin:auto;
+    min-width: 21rem;
+    width: 30%;
+    max-width:34rem;
+    padding:1.8rem 2.2rem 1.5rem 2.2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* For Symmetry */
+    padding-bottom: 4rem;
+}
+
+.sign-logo{
+    color: #60657b;
+}
+
+.form-container h1{
+    text-align: center;
+    font-size:1.6rem;
+}
+
+.form-container h1 + span{
+    text-align: center;
+    display:block;
+    padding:0.5rem;
+}
+
+.frm-text{
+    position:relative;
+    margin: 1.95rem 0rem 1.3rem 0rem;
+    cursor:pointer;
+    /* border:2px solid green; */
+}
+
+.frm-text.password{
+    margin-bottom: 0.9rem;   
+}
+
+.frm-text input{
+    width: 100%;
+    height: var(--input-field-height);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid grey;
+    padding-inline:4px;
+    font-size:0.9rem;
+}
+
+.frm-text input[disabled]{
+    background-color: white;
+}
+
+.frm-text .text-label{
+    user-select: none;
+    position:absolute;
+    top:10%;
+    left:0px;
+    transition: .5s ease;
+    background-color: white;
+}
+
+
+
+.frm-text span::before{
+    user-select: none;
+    position:absolute;
+    content:'';
+    top:34px;
+    left:0;
+    width:0%;
+    height:2px;
+    background-color: #0058e6;
+    transition:.1s ease-out;
+}
+
+.frm-text input:focus + label,
+.frm-text input:valid + label{
+    color:#0058e6;
+    top:-19px;
+}
+
+.frm-text input:focus,
+.frm-text input:valid{
+    border:none;
+}
+
+.frm-text input:focus ~ span::before,
+.frm-text input:valid ~ span::before
+{
+    width:100%;
+}
+
+
+.frm-submit{
+    text-align:center;
+}
+
+.frm-submit input[type="submit"]{
+    width:60%;
+    height:2.3rem;
+    border-radius:32px;
+    border:none;
+    color:white;
+    background-color: #0058e6;
+    margin-bottom: 0.1rem;
+    margin-top:0.5rem;
+    font-weight: 600;
+    font-size: 0.8rem; 
+    cursor:pointer;
+    transition: .3s ease;
+}
+
+.frm-submit input[type="submit"]:not([disabled]):hover{
+    transform: scale(1.05);
+}
+
+.frm-submit input[type="submit"][disabled]{
+    opacity:0.7;
+    pointer-events: none;
+}
+
+.forgot-pass{
+    position:relative;
+    /* height:1.0rem; */
+    margin-bottom:0.9rem;
+}
+
+.forgot-pass a{
+    display:inline-block;
+    text-decoration: none;
+    color:rgb(0 0 131 / 79%);
+}
+
+.forgot-pass a:hover{
+    color:blue;
+}
+
+.signup{
+    text-align: center;
+    margin-top:0.5rem;
+}
+
+.login-link{
+    color:rgb(0 0 131 / 79%);;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.login-link:hover{
+    color:blue;
+}
+
+.frm-text .frm-err{
+    position:absolute;
+    left:0px;
+    top: calc(var(--input-field-height));
+    color:red;
+    display:none;
+    background-color: white;
+    z-index:10;
+    padding:3px;
+}
+
+/* For Authentication Errors */
+
+.auth-err{
+    text-align:center;
+    color:red;
+    margin-top:0.5rem;
+}
