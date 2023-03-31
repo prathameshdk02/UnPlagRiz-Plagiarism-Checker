@@ -1,7 +1,7 @@
 
 /* Domains */
 const webDomain = 'https://copyleakstest.cyclic.app';
-// const webDomain = 'https://854a-114-79-188-176.in.ngrok.io';
+// const webDomain = 'https://d26d-2401-4900-56ea-e233-2d6d-b2f5-fee6-66f0.in.ngrok.io';
 
 /* Generates Random IDs */
 const generateRandomId = () => {
@@ -16,6 +16,13 @@ const delay = ms => new Promise((resolve) =>{
 });
 
 const toCheckArea = $('#check_area');
+const checkCoords = $('.checker-section').offset();
+
+$('.check-now a').click(() => {
+    $('html, body').animate({
+        scrollTop: checkCoords.top
+    },900);
+});
 
 const clearResults = async () => {
     if($('.result').toArray().length > 0){
@@ -32,10 +39,16 @@ const clearResults = async () => {
 const loadingScreen = $('.loading-screen');
 const preloaderSplash = $('.load-splash');
 
-let heroCoords = $('#section-wrap-1').offset();
+let heroCoords = $('.navbar-wrapper').offset();
 
 /* Adding Click Listener to Scan Now Button */ 
 $('#scan_btn').click(async () => {
+    $('html, body').animate({
+        scrollTop: heroCoords.top
+    },900);
+
+    await delay(900);
+
     $(this).attr("disabled","disabled");
     $('html').css("overflow","hidden");
     loadingScreen.css("display","flex").hide().fadeIn(500);
@@ -126,7 +139,7 @@ $('#scan_btn').click(async () => {
         $('.attribute-wrapper').slideDown(500);
         
         // Smooth Scroll
-        let resultCoords = $('#result-heading').offset();
+        let resultCoords = $('#section-wrap-results').offset();
 
         $('#results_totalWords').text(resData.scannedDocument.totalWords);
         $('#results_identicalWords').text(scoreResults.identicalWords);
